@@ -1,7 +1,8 @@
 import Reveal from './Reveal'
 
 type FeatureRowProps = {
-  num: string
+  /** Omit to drop the "Feature 01" eyebrow entirely. */
+  num?: string
   title: string
   body: string
   bullets?: string[]
@@ -29,8 +30,10 @@ export default function FeatureRow({
       className="grid items-center gap-10 border-t border-rule py-14 md:grid-cols-2 md:gap-16 md:py-24"
     >
       <div className={flip ? 'md:order-2' : undefined}>
-        <p className={`text-eyebrow uppercase ${accentText}`}>Feature {num}</p>
-        <h2 className="mt-4 font-serif text-title text-balance text-ink">{title}</h2>
+        {num && <p className={`text-eyebrow uppercase ${accentText}`}>Feature {num}</p>}
+        <h2 className={`font-serif text-title text-balance text-ink ${num ? 'mt-4' : ''}`}>
+          {title}
+        </h2>
         <p className="mt-5 max-w-md text-lead text-body">{body}</p>
         {bullets && (
           <ul className="mt-7 space-y-3">

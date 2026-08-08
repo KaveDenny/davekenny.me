@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import FeatureRow from '../components/FeatureRow'
+import SharedPhoneFrame from '../components/PhoneFrame'
 import Reveal from '../components/Reveal'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
@@ -179,12 +180,7 @@ export default function Alculator() {
 ------------------------------------------------------------------------- */
 
 function PhoneFrame({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="w-[215px] rounded-[2.25rem] border-[7px] border-ink bg-white p-4 shadow-2xl md:w-[250px]">
-      <div aria-hidden="true" className="mx-auto mb-3 h-1 w-10 rounded-full bg-rule" />
-      {children}
-    </div>
-  )
+  return <SharedPhoneFrame className="w-[215px] md:w-[250px]">{children}</SharedPhoneFrame>
 }
 
 function LiveBacScreen() {
