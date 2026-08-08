@@ -32,13 +32,6 @@ const STEPS = [
   ['Cook', 'Full method with step-by-step photos. Tick meals off as you go.'],
 ]
 
-const SPEC = [
-  ['Native iOS', 'SwiftUI, MVVM'],
-  ['Firebase', 'Auth, Firestore, Cloud Functions, Cloud Messaging'],
-  ['~4,300 meals', 'Ingredients, quantities, method steps and photos'],
-  ['Server-side matching', 'Runs in a Cloud Function, app open or not'],
-]
-
 const accent = { accentText: 'text-coral', accentDot: 'bg-coral' }
 
 /**
@@ -286,21 +279,6 @@ export default function SpoonFed() {
                 partner is never going to match on.
               </p>
             </Reveal>
-          </div>
-        </section>
-
-        {/* UNDER THE HOOD */}
-        <section className="border-t border-rule">
-          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-            <h2 className="text-eyebrow uppercase text-muted">Under the hood</h2>
-            <dl className="mt-8 grid gap-px overflow-hidden rounded-sm bg-rule sm:grid-cols-2 lg:grid-cols-4">
-              {SPEC.map(([name, detail]) => (
-                <div key={name} className="bg-paper p-6">
-                  <dt className="font-serif text-2xl text-ink">{name}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-muted">{detail}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </section>
 
