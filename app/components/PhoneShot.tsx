@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import DynamicIsland from './DynamicIsland'
 
 type PhoneShotProps = {
   src: string
@@ -32,7 +33,7 @@ export default function PhoneShot({
     <div
       className={`shrink-0 rounded-[2.5rem] bg-ink p-[5px] shadow-2xl sm:rounded-[2.75rem] sm:p-1.5 ${className}`}
     >
-      <div className="overflow-hidden rounded-[2.15rem] bg-white sm:rounded-[2.35rem]">
+      <div className="relative overflow-hidden rounded-[2.15rem] bg-white sm:rounded-[2.35rem]">
         <Image
           src={src}
           alt={alt}
@@ -42,6 +43,9 @@ export default function PhoneShot({
           priority={priority}
           className="h-auto w-full"
         />
+        {/* Some of these captures include the island and some do not; drawing
+            it here makes every handset consistent. */}
+        <DynamicIsland variant="image" />
       </div>
     </div>
   )

@@ -32,13 +32,6 @@ const STEPS = [
   ['Cook', 'Full method with step-by-step photos. Tick meals off as you go.'],
 ]
 
-const SPEC = [
-  ['Native iOS', 'SwiftUI, MVVM'],
-  ['Firebase', 'Auth, Firestore, Cloud Functions, Cloud Messaging'],
-  ['~4,300 meals', 'Ingredients, quantities, method steps and photos'],
-  ['Server-side matching', 'Runs in a Cloud Function, app open or not'],
-]
-
 const accent = { accentText: 'text-coral', accentDot: 'bg-coral' }
 
 /**
@@ -151,7 +144,6 @@ export default function SpoonFed() {
         {/* FEATURES */}
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <FeatureRow
-            num="01"
             title="One meal at a time. Yes or no."
             body="This is the whole interaction. A photo, how long it takes, how many it feeds, then yes or no. No lists to compare, no scrolling through options together, no talking anyone into anything. You go through the deck on your own phone, at your own pace."
             bullets={[
@@ -164,7 +156,6 @@ export default function SpoonFed() {
           />
 
           <FeatureRow
-            num="02"
             title="Or browse the whole catalogue"
             body="If you would rather go looking than be shown, the full catalogue is there: by cuisine, by mood, by how long you have got. Liking works the same way from anywhere."
             bullets={[
@@ -187,7 +178,6 @@ export default function SpoonFed() {
           />
 
           <FeatureRow
-            num="03"
             title="What you both like becomes your week"
             body="When you have both liked the same meal it becomes a match, and you are both told. The matching runs on the server, so it works whether or not either of you has the app open."
             bullets={[
@@ -209,7 +199,6 @@ export default function SpoonFed() {
           />
 
           <FeatureRow
-            num="04"
             title="Make it with what suits you"
             body="Plenty of dishes come in a few versions: beef, turkey, veggie. You match on the dish, then choose which version you are actually cooking. The ingredients and the shopping list follow your choice."
             bullets={[
@@ -232,7 +221,6 @@ export default function SpoonFed() {
           />
 
           <FeatureRow
-            num="05"
             title="A week that shops well"
             body="Matched meals go into a shared weekly plan you can drag into order. It leans towards sets of meals that reuse the same ingredients, so you buy one bunch of coriander instead of three. Less on the bill and less in the bin."
             bullets={[
@@ -254,7 +242,6 @@ export default function SpoonFed() {
           />
 
           <FeatureRow
-            num="06"
             title="Cook what you've got"
             body="Tell it what is in the fridge and it ranks meals by how close you are, naming exactly what is still missing. It answers “what is worth a quick shop?” rather than pretending you can cook from nothing."
             bullets={[
@@ -292,21 +279,6 @@ export default function SpoonFed() {
                 partner is never going to match on.
               </p>
             </Reveal>
-          </div>
-        </section>
-
-        {/* UNDER THE HOOD */}
-        <section className="border-t border-rule">
-          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-            <h2 className="text-eyebrow uppercase text-muted">Under the hood</h2>
-            <dl className="mt-8 grid gap-px overflow-hidden rounded-sm bg-rule sm:grid-cols-2 lg:grid-cols-4">
-              {SPEC.map(([name, detail]) => (
-                <div key={name} className="bg-paper p-6">
-                  <dt className="font-serif text-2xl text-ink">{name}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-muted">{detail}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </section>
 

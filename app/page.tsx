@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import PhoneFrame from './components/PhoneFrame'
 import PhoneShot from './components/PhoneShot'
 import ProjectCard from './components/ProjectCard'
 import Reveal from './components/Reveal'
@@ -205,27 +206,48 @@ export default function Home() {
   )
 }
 
-/** Alculator has no screenshots yet, so the card shows its core UI instead. */
+/**
+ * Alculator has no screenshots yet, so the card shows its core UI in a drawn
+ * handset — the same frame the other two cards use, so all three read as iOS.
+ */
 function AlculatorPreview() {
   return (
-    <div className="w-[82%] max-w-72 rounded-2xl bg-white p-5 shadow-2xl">
-      <p className="text-eyebrow uppercase text-muted">Blood alcohol</p>
-      <p className="mt-3 font-serif text-6xl leading-none text-violet tabular-nums">0.062</p>
-      <p className="mt-3 inline-block rounded-full bg-violet-tint px-3 py-1 text-eyebrow uppercase text-violet">
-        Clearing
-      </p>
-      <dl className="mt-5 grid grid-cols-3 gap-2 border-t border-rule pt-4">
+    <PhoneFrame className="w-[56%]">
+      <p className="text-[0.5625rem] uppercase tracking-[0.14em] text-muted">Right now</p>
+
+      <div className="mt-3 rounded-xl bg-violet-tint p-3 text-center">
+        <p className="font-serif text-3xl leading-none text-violet tabular-nums">0.062</p>
+        <p className="mt-1.5 text-[0.5rem] uppercase tracking-[0.12em] text-muted">
+          Blood alcohol
+        </p>
+        <p className="mt-2 inline-block rounded-full bg-white px-2 py-0.5 text-[0.5rem] uppercase tracking-[0.1em] text-violet">
+          Clearing
+        </p>
+      </div>
+
+      <dl className="mt-3 flex justify-between rounded-lg border border-rule px-2.5 py-2">
         {[
           ['Clear in', '2h 14m'],
           ['Peak', '0.094'],
           ['Drinks', '3'],
         ].map(([label, value]) => (
           <div key={label}>
-            <dt className="text-[0.5625rem] uppercase tracking-[0.12em] text-muted">{label}</dt>
-            <dd className="mt-1 text-sm font-medium text-ink tabular-nums">{value}</dd>
+            <dt className="text-[0.4375rem] uppercase tracking-[0.1em] text-muted">{label}</dt>
+            <dd className="mt-0.5 text-[0.625rem] font-semibold text-ink tabular-nums">{value}</dd>
           </div>
         ))}
       </dl>
-    </div>
+
+      <ul className="mt-2.5 flex gap-1">
+        {['Beer', 'Wine', 'Spirit', '+'].map((drink) => (
+          <li
+            key={drink}
+            className="flex-1 rounded-md border border-rule py-1.5 text-center text-[0.4375rem] uppercase tracking-[0.06em] text-muted"
+          >
+            {drink}
+          </li>
+        ))}
+      </ul>
+    </PhoneFrame>
   )
 }
