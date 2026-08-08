@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+// Images are served from /public and optimized by Next, so no remote hosts
+// are needed. Keep it that way — the previous setup fetched its own images
+// back from the production domain.
+const nextConfig: NextConfig = {}
 
-export default nextConfig;
+export default nextConfig
